@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>非纳克斯官网</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet"  type="text/css" href="css/header.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	</head>
+	<body>
+		<div class="header-nav">
+			<div class="header-right-top">
+				<ul>
+					<li><img src="img/webimg/guide_btn_en_a.png" alt="" /></li>
+					<li><img src="img/webimg/guide_btn_phone_a.png" alt="" /></li>
+					<li><img src="img/webimg/guide_btn_wechat_a.png" alt="" /></li>
+					<li class="text-li"><span>办公入口></span></li>
+				</ul>
+			</div>
+			
+			<div class="header-nav-list">
+				<ul id="nav_li">
+					<li class="short nav-hover">
+						<span class="nav-text">首页</span>
+						<ul class="nav-option">
+							<li style="height: 60px;">首页</li>
+						</ul>
+					</li>
+					<li class="long">
+						<span class="nav-text">最新动态</span>
+						<ul class="nav-option">
+							<li style="height: 60px;">最新动态</li>
+							<li>菲园动态</li>
+							<li>精彩菲园</li>
+						</ul>
+					</li>
+					<li class="long">
+						<span class="nav-text">关于菲纳克思</span>
+						<ul class="nav-option">
+							<li style="height: 60px;">关于菲纳克思</li>
+							<li>菲纳克思致辞</li>
+							<li>菲纳克思方案</li>
+							<li>园所介绍</li>
+							<li>课程特色</li>
+							<li>我们的团队</li>
+						</ul>
+					</li>
+					<li class="long">
+						<span class="nav-text">招生信息</span>
+						<ul class="nav-option">
+							<li style="height: 60px;">招生信息</li>
+							<li>入园申请</li>
+							<li>预约参观</li>
+							<li>常见问题</li>
+						</ul>
+					</li>
+					<li class="long">
+						<span class="nav-text">国际讲坛</span>
+						<ul class="nav-option">
+							<li style="height: 60px;">招生信息</li>
+						</ul>
+					</li>
+					<li class="long">
+						<span class="nav-text">家园公育</span>
+						<ul class="nav-option">
+							<li style="height: 60px;">家园公育</li>
+							<li>家园早知道</li>
+							<li>每周食谱</li>
+							<li>周行事历</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="start-page" id="banners">
+			<div class="i_banner"><img src="img/webimg/Banner1.jpg" alt="" /></div>
+			<div class="i_banner"><img src="img/webimg/Banner2.jpg" alt="" /></div>
+			<div class="i_banner"><img src="img/webimg/Banner1.jpg" alt="" /></div>
+			<div id="bannerIndex">
+				<!--<div class="banner-index-dot banner-index-dot-focus"></div>
+				<div class="banner-index-dot banner-index-dot-focus"></div>
+				<div class="banner-index-dot banner-index-dot-focus"></div>-->
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery.js"></script>
+	<script>
+		$(function(){
+			var timer_1=null;
+			$("#nav_li>li").click(function(){
+				$("#nav_li>li").removeClass("nav-hover");
+				$(this).addClass("nav-hover")
+			})
+			for(var i =0 ;i<$("#nav_li>li").length;i++){
+				if($("#nav_li>li").eq(i).find(".nav-option").find("li").length>1){
+					$("#nav_li>li").eq(i).mouseenter(function(){
+						var nav_option = $(this).find(".nav-option");
+						nav_option.show();
+						nav_option.unbind();
+						nav_option.on("mouseleave",function(){
+							$(this).hide();
+						})
+					})
+				}
+			}
+			setBanner();
+			
+			function setBanner(){
+				var i_banner = document.getElementsByClassName("i_banner");
+				len = i_banner.length;
+				if(len<1) return;
+				var html = ""
+				for(var i=0;i<len;i++){
+					i_banner[i].setAttribute("index",i);
+					html+='<div index='+i+' class="banner-index-dot banner-index-dot-unfocus"></div>'
+				}
+				document.getElementById("bannerIndex").innerHTML=html;
+			    runBanner(4000,0);//开始轮播
+			
+			}
+			function runBanner(speed,showIndex,opt){// banner时间 当前banner 索引
+				clearInterval(timer_1);
+				var showIndex = showIndex;
+				var i_banner = document.getElementsByClassName("i_banner");
+				var i_banner_len = i_banner.length;
+				var banner_indexs = document.getElementById("bannerIndex");
+					banner_indexs = banner_indexs.getElementsByTagName("div");
+					
+						$(i_banner[showIndex]).fadeIn("slow");
+						$(banner_indexs[showIndex]).addClass("banner-index-dot-focus")
+						
+						for(var i=0;i<i_banner_len;i++){
+							if(i!=showIndex){
+								$(i_banner[i]).fadeOut();
+								$(banner_indexs[i]).removeClass("banner-index-dot-focus")
+							}
+						}
+					
+					 timer_1 = setInterval(function(){
+						$(i_banner[showIndex]).fadeOut();
+						$(banner_indexs[showIndex]).removeClass("banner-index-dot-focus")
+						showIndex++;
+						if(showIndex>=i_banner_len){
+							showIndex=0
+						}
+						$(i_banner[showIndex]).fadeIn("slow");
+						$(banner_indexs[showIndex]).addClass("banner-index-dot-focus")
+					},speed)
+			}
+			$("#bannerIndex>div").mouseenter(function(){
+				var index = parseInt(this.getAttribute("index"));
+					runBanner(4000,index);
+					clearInterval(timer_1);
+			})
+			$("#bannerIndex>div").mouseleave(function(){
+				var index = parseInt(this.getAttribute("index"));
+					runBanner(4000,index);
+					//clearInterval(timer_1);
+			})
+		})
+	</script>
+</html>

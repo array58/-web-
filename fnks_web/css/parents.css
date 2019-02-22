@@ -1,0 +1,82 @@
+.header-nav{
+	background: rgba(255,255,255,1);
+    background-image: url(../img/webimg/logo_guide.png);
+    background-repeat: no-repeat;
+    background-position: 32px 20px;
+    z-index: 1000;
+}
+
+.about-fnks-page{
+	
+	background:url(../img/webimg/home_bg_jiayuan.png) ;
+	position: relative;
+	background-repeat: repeat-y;
+	margin-top: 120px;
+	overflow:hidden;
+	text-align: center;
+}
+.logo-title-wrapper{
+	text-align: center;
+	position: relative;
+	margin-top: 94px;
+}
+.msg-titles{
+	margin-top: 86px;
+	margin-bottom: 72px;
+}
+.msg-titles>div{
+	display: inline-block;
+	border-radius: 6px;
+	padding: 20px 16px;
+	background: #ffffff;
+	text-align: initial;
+	margin: 0 8px;
+}
+.title-line{
+	width: 304px;
+	overflow: hidden;
+}
+.title-line-2{
+	width: 434px;
+	overflow: hidden;
+}
+.logo{
+	vertical-align: top;
+}
+.title{
+	vertical-align: top;
+	color: #225FA4;
+	font-size: 20px;
+}
+.go{
+	vertical-align: top;
+	color: #91A0A7;
+	font-size: 16px;
+	float: right;
+	padding-top: 2px;
+}
+.go a{
+	text-decoration: none;
+	color:  #91A0A7;
+}
+.p-list{
+	border-top: 1px solid #DADADA;
+	margin-top: 16px;
+}
+.title-list:before{
+	content: "●";
+	color: #B9C9DB;
+	font-size: 20px;
+}
+.title-list{
+	padding: 8px 10px;
+}
+.title-text{
+	font-size: 16px;
+	color: #7A8C96;
+}
+.title-date{
+	float: right;
+	color: #BCC4C8;
+	padding-top: 4px;
+}

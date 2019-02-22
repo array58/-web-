@@ -1,0 +1,20 @@
+.header-nav{
+	background: rgba(255,255,255,1);
+    background-image: url(../img/webimg/logo_guide.png);
+    background-repeat: no-repeat;
+    background-position: 32px 20px;
+    z-index: 1000;
+}
+.about-fnks-page{
+	height: 960px;
+	background:url(../img/webimg/home_bg_about.png) ;
+	position: relative;
+	background-repeat: repeat-y;
+	top: 120px;
+	overflow:hidden;
+}
+.logo-title-wrapper{
+	text-align: center;
+	position: relative;
+	margin-top: 94px;
+}

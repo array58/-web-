@@ -1,0 +1,38 @@
+body{
+	width: 1920px!important;
+	min-width: 1920px!important;
+}
+.start-page{
+	height: 1080px;
+	position: relative;
+}
+.start-page>div.i_banner{
+	width: 100%;
+	position: absolute;
+	top: 0;
+	display: none;
+}
+.start-page>div.i_banner>img{
+	width: 100%;
+}
+#bannerIndex{
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	height: 16px;
+	bottom: 48px!important;
+}
+.banner-index-dot{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	margin: 0 8px;
+	cursor: pointer;
+}
+.banner-index-dot-focus{
+	background: rgba(255,255,255,0.6)!important;
+}
+.banner-index-dot-unfocus{
+	background: rgba(255,255,255,0.3);
+}
