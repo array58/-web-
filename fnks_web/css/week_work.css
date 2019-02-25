@@ -1,0 +1,109 @@
+.week_time_wrapper{
+	margin-top: 120px;
+	overflow: hidden;
+	background: url(../img/webimg/bg_top.png);
+	background-size: 100%;
+}
+.page_title{
+	color: #0C5EC1;
+	font-size: 36px;
+	text-align: center;
+	margin-top: 74px;
+}
+.time{
+	color: #888A8C;
+	font-size: 16px;
+	text-align: center;
+	margin-top: 12px;
+}
+.week_table{
+	border-collapse: collapse;
+	width: 1126px;
+	margin: 44px auto;
+	text-align: center;
+	cursor: pointer;
+	background: #fff;
+}
+.table_header{
+	font-size: 18px;
+	color: #305373;
+	background: #CDD5DD;
+	border: 1px solid #DEDEDE;
+}
+.table_header td{
+	height: 44px;
+	line-height: 44px;
+}
+.week_table td{
+	border:1px solid #F0F0F0;
+}
+.work-items{
+	visibility: hidden;
+}
+.day-work-list{
+	width: 100%;
+}
+.show-day{
+	vertical-align: middle;
+	width: 240px;
+	background: #F4F4F4;
+}
+.show-day-focus{
+	background: #2D8CF8;
+}
+.show-day .zn{
+	font-size: 24px;
+	color: #333333;
+}
+.show-day .date{
+	font-size: 16px;
+	color: #999999;
+	margin-top: 10px;
+}
+.text-focus{
+	color: #ffffff!important;
+}
+.work-text{
+	width: 474px;
+	height: 50px;
+	vertical-align: middle;
+	color: #333333;
+	font-size: 16px;
+}
+.work-remark{
+	width: 412px;
+	height: 50px;
+	vertical-align: middle;
+	color: #333333;
+	font-size: 16px;
+}
+.change-page{
+	text-align: center;
+	margin: 36px 0 58px 0;
+}
+.change-page>div{
+	display: inline-block;
+	width: 160px;
+	height: 46px;
+	background-size: 100%;
+	line-height: 46px;
+	font-size: 18px;
+	cursor: pointer;
+}
+.pre{
+	background: url(../img/webimg/bg_pre_a.png);
+	color: #2D72C9;
+}
+.next{
+	background: url(../img/webimg/bg_next_a.png);
+	margin-left: 20px;
+	color: #2D72C9;
+}
+.pre-focus{
+	background: url(../img/webimg/bg_pre_b.png);
+	color: #ffffff;
+}
+.next-focus{
+	background: url(../img/webimg/bg_next_b.png);
+	color: #ffffff;
+}
