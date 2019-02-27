@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body><!DOCTYPE html>
+<html>
+	<head>
 		<meta charset="utf-8" />
 		<title>非纳克斯官网</title>
 		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" href="css/video.css" />
 		<link rel="stylesheet"  type="text/css" href="css/header.css"/>
-		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" href="css/footer.css" />
+		<link rel="stylesheet" type="text/css" href="css/videoScanner.css"/>
+		<script src="js/video.js"></script>
+		
 	</head>
 	<body>
 		<div class="header-nav">
@@ -72,23 +82,62 @@
 				</ul>
 			</div>
 		</div>
-		<div class="start-page" id="banners">
-			<div class="i_banner">
-				<img src="img/webimg/Banner1.jpg" alt="" />
+		
+		<div class="scanner-wrapper">
+			<p class="imgs-title">校园第二届亲子活动录影</p>	
+			<div id="scanner">
+				<div class="imgs">
+					<div class="img-now">
+						<video id="my-player" src="img/01.mp4" class="video-js vjs-default-skin" controls style="width: 100%;height: 100%;"></video>
+					</div>
+					
+				</div>
 			</div>
-			<div class="i_banner">
-				<img src="img/webimg/Banner2.jpg" alt="" />
-				<div class="trigger-btn" id="go_apply"></div>
+			<p class="img-title">视频介绍</p>
+			<p class="detail-text">翻页显示：点击页面两侧的左右键，以及底部的页码可支持翻页浏览；</p>
+		</div>
+		
+		
+		<div class="footer-wrapper">
+			<div class="footer-nav-wrapper">
+				<ul>
+					<li><a href="#">英才招聘</a></li>
+					<li><a href="#">英才招聘</a></li>
+					<li><a href="#">英才招聘</a></li>
+					<li><a href="#">英才招聘</a></li>
+					<li><a href="#">英才招聘</a></li>
+				</ul>
 			</div>
-			
-			<div id="bannerIndex">
-				<!--<div class="banner-index-dot banner-index-dot-focus"></div>
-				<div class="banner-index-dot banner-index-dot-focus"></div>
-				<div class="banner-index-dot banner-index-dot-focus"></div>-->
+			<div class="logos-and-infos">
+				<div class="code-wrapper">
+					<img src="img/webimg/code-logo.jpg" alt="" />
+					<p>菲纳克思教育</p>
+				</div>
+				<div class="info-wrapper">
+					<ul>
+						<li>
+							<span>联系电话：</span>
+							<span>0571-88212870</span>
+						</li>
+						<li>
+							<span>联系邮箱：</span>
+							<span>feina@66uu.cn</span>
+						</li>
+						<li>
+							<span>浙公网安备33010902001060号</span>
+							<span>&nbsp;&nbsp;浙ICP备17052530号</span>
+						</li>
+						<li>
+							<span>Copyright ©菲纳克斯.com  &nbsp; All Rights Reserved </span>
+						</li>
+					</ul>
+				</div>
+				
 			</div>
 		</div>
 	</body>
 	<script src="js/jquery.js"></script>
+	
 	<script>
 		$(function(){
 			var timer_1=null;
@@ -108,60 +157,54 @@
 					})
 				}
 			}
-			setBanner();
 			
-			function setBanner(){
-				var i_banner = document.getElementsByClassName("i_banner");
-				len = i_banner.length;
-				if(len<1) return;
-				var html = ""
-				for(var i=0;i<len;i++){
-					i_banner[i].setAttribute("index",i);
-					html+='<div index='+i+' class="banner-index-dot banner-index-dot-unfocus"></div>'
-				}
-				document.getElementById("bannerIndex").innerHTML=html;
-			    runBanner(4000,0);//开始轮播
+			window.onload=function(){
+				//setImgScanner();
+				
+				var options = {};
+
+				var player = videojs('my-player', options, function onPlayerReady() {
+				  videojs.log('Your player is ready!');
+				
+				  // In this context, `this` is the player that was created by Video.js.
+				  this.play();
+				
+				  // How about an event listener?
+				  this.on('ended', function() {
+				    videojs.log('Awww...over so soon?!');
+				  });
+				  this.on("pause",function(){
+				  	$(".vjs-big-play-button").show();
+				  })
+				  this.on("play",function(){
+				  	$(".vjs-big-play-button").hide();
+				  })
+				});
+				
+			}
 			
-			}
-			function runBanner(speed,showIndex,opt){// banner时间 当前banner 索引
-				clearInterval(timer_1);
-				var showIndex = showIndex;
-				var i_banner = document.getElementsByClassName("i_banner");
-				var i_banner_len = i_banner.length;
-				var banner_indexs = document.getElementById("bannerIndex");
-					banner_indexs = banner_indexs.getElementsByTagName("div");
-					
-						$(i_banner[showIndex]).fadeIn("slow");
-						$(banner_indexs[showIndex]).addClass("banner-index-dot-focus")
-						
-						for(var i=0;i<i_banner_len;i++){
-							if(i!=showIndex){
-								$(i_banner[i]).fadeOut();
-								$(banner_indexs[i]).removeClass("banner-index-dot-focus")
-							}
-						}
-					
-					 timer_1 = setInterval(function(){
-						$(i_banner[showIndex]).fadeOut();
-						$(banner_indexs[showIndex]).removeClass("banner-index-dot-focus")
-						showIndex++;
-						if(showIndex>=i_banner_len){
-							showIndex=0
-						}
-						$(i_banner[showIndex]).fadeIn("slow");
-						$(banner_indexs[showIndex]).addClass("banner-index-dot-focus")
-					},speed)
-			}
-			$("#bannerIndex>div").mouseenter(function(){
-				var index = parseInt(this.getAttribute("index"));
-					runBanner(4000,index);
-					clearInterval(timer_1);
-			})
-			$("#bannerIndex>div").mouseleave(function(){
-				var index = parseInt(this.getAttribute("index"));
-					runBanner(4000,index);
-					//clearInterval(timer_1);
-			})
+			
 		})
+		
+		function setImgScanner(){
+			
+			$("#preImg").mouseenter(function(){
+				this.src="img/webimg/xc_arrow_left_b.png"
+			})
+			$("#preImg").mouseleave(function(){
+				this.src="img/webimg/xc_arrow_left_a.png"
+			})
+			$("#nextImg").mouseenter(function(){
+				this.src="img/webimg/xc_arrow_right_b.png"
+			})
+			$("#nextImg").mouseleave(function(){
+				this.src="img/webimg/xc_arrow_right_a.png"
+			})
+			
+			
+		}
 	</script>
+</html>
+
+	</body>
 </html>

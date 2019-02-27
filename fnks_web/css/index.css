@@ -36,3 +36,11 @@ body{
 .banner-index-dot-unfocus{
 	background: rgba(255,255,255,0.3);
 }
+.trigger-btn{
+	position: absolute;
+	width: 28.7%;
+	height: 15.5%;
+	top: 76%;
+    left: 36%;
+	cursor: pointer;
+}

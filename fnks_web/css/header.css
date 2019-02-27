@@ -9,7 +9,10 @@ body{
 	height: 120px;
 	top: 0;
 	left: 0;
-	background: rgba(255,255,255,0.9);
+	background: rgb(255, 255, 255);    /*不支持rgba的浏览器*/
+	background: rgba(255,255,255,.5);  /*支持rgba的浏览器*/
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7fffffff,endColorstr=#7fffffff);    /*IE8支持*/
+	
 	background-image: url("../img/webimg/logo_guide.png");
 	background-repeat: no-repeat;
 	background-position: 32px 20px;

@@ -1,9 +1,9 @@
 .scanner-wrapper{
 	margin-top: 120px;
 	overflow: hidden;
-	background: url(../img/webimg/xc_bg_default.png);
+	background: url(../img/webimg/bg_top.png);
 	background-repeat:no-repeat ;
-	background-position:center 128px;
+	padding-bottom: 50px;
 }
 .imgs-title{
 	text-align: center;
@@ -16,7 +16,7 @@
 	width: 1200px;
 	height: 675px;
 	margin: 36px auto 0 auto;
-	/*background: yellow;*/
+	
 	
 }
 
@@ -85,7 +85,7 @@
 	margin: 20px auto 0 auto;
 	width: 1200px;
 }
-.img-indexs{
+/*.img-indexs{
 	text-align: center;
 }
 .img-indexs{
@@ -110,4 +110,4 @@
 	color: #ffffff!important;
 	background: url(../img/webimg/bg_num_a.png)!important;
 }
-
+*/

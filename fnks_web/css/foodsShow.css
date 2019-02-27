@@ -1,0 +1,143 @@
+.week_time_wrapper{
+	margin-top: 120px;
+	overflow: hidden;
+	background: url(../img/webimg/bg_top.png);
+	background-size: 100%;
+}
+.page_title{
+	color: #0C5EC1;
+	font-size: 36px;
+	text-align: center;
+	margin-top: 74px;
+}
+.time{
+	color: #888A8C;
+	font-size: 16px;
+	text-align: center;
+	margin-top: 12px;
+}
+
+.content-wrapper{
+	width: 1124px;
+	margin: 50px auto;
+	height: 754px;
+	border: 1px solid #E1E1E1;
+}
+.content-wrapper>div{
+	display: inline-block;
+	vertical-align: top;
+	float: left;
+}
+.ul-days{
+	background-color: #f4f4f4;
+}
+.ul-days li{
+	height: 150px;
+	text-align: center;
+	border-top: 1px solid #ffffff;
+	cursor: pointer;
+	overflow: hidden;
+}
+.ul-days li:hover{
+	background-color: #2D8CF8;
+}
+.ul-days-focus{
+	background-color: #2D8CF8;
+}
+.zn-time{
+	font-size: 24px;
+	color: #333333;
+	margin-top: 50px;
+}
+.zn-time-focus{
+	color: #ffffff;
+}
+.en-time{
+	font-size: 16px;
+	color: #999999;
+	margin-top: 10px;
+}
+.en-time-focus{
+	color: #ffffff;
+}
+.days{
+	width: 240px;
+}
+.items-wrapper{
+	width: 884px;
+	height: 754px;
+	overflow: hidden;
+	background: #ffffff;
+}
+.single-item{
+	height: 754px;
+}
+.single-item>div{
+	float: left;
+	height: 100%;
+}
+.pics{
+	width: 474px;
+}
+.texts{
+	width: 410px;
+}
+.texts-wrapper{
+	padding-left: 82px;
+	padding-top: 30px;
+}
+.text-title{
+	font-size: 18px;
+	margin-top: 30px;
+}
+.text-title img{
+	vertical-align: middle;
+}
+.text-title span{
+	vertical-align: middle;
+}
+.zhengcan{
+	color: #2BC195;
+}
+.fucan{
+	color: #FF8F13;
+}
+.food-text{
+	font-size: 16px;
+	color: #333333;
+	margin-top: 16px;
+}
+
+.change-page{
+	text-align: center;
+	margin: 36px 0 58px 0;
+}
+.change-page>div{
+	display: inline-block;
+	width: 160px;
+	height: 46px;
+	background-size: 100%;
+	line-height: 46px;
+	font-size: 18px;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	-moz-user-select: none;
+}
+.pre{
+	background: url(../img/webimg/bg_pre_a.png);
+	color: #2D72C9;
+}
+.next{
+	background: url(../img/webimg/bg_next_a.png);
+	margin-left: 20px;
+	color: #2D72C9;
+}
+.pre-focus{
+	background: url(../img/webimg/bg_pre_b.png);
+	color: #ffffff;
+}
+.next-focus{
+	background: url(../img/webimg/bg_next_b.png);
+	color: #ffffff;
+}
